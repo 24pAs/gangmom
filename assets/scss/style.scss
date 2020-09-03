@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+// variables
+$breakpoints: (
+  'pc': 832px
+);
+
+// mixin
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints , $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// grid
+.grid {
+  display: grid;
+  grid-template-columns: 0 repeat(4, 1fr) 0;
+  column-gap: 8px;
+  @include breakpoint('pc') {
+    grid-template-columns: 0 repeat(12, 1fr) 0;
+    column-gap: 16px;
+  }
+}
+
+.container {
+  background: black;
+  
+  @include breakpoint('pc') {
+    background: red;
+  }
+}
