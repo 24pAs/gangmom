@@ -1,6 +1,11 @@
 module.exports = {
   head: {
-    title: '강남엄마'
+    title: '강남엄마',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '이제 찾아다니지 마세요. ‘강남엄마’ 하세요.' }
+    ]
   },
   modules: [
     '@nuxtjs/axios',
@@ -11,8 +16,13 @@ module.exports = {
     baseURL: 'https://demo7094602.mockable.io/'
   },
   css: [
-    { src: '~/assets/scss/style.scss', lang: 'scss' }
+    '~/assets/font/font.css'
   ],
+  styleResources: {
+    scss: [
+        '~/assets/scss/style.scss'
+    ]
+  },
   build: {
     postcss: {
       preset: {
