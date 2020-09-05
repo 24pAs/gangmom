@@ -1,16 +1,31 @@
 <template>
-  <div>
-    <div class="grid">
-      {{ $store.state.isLogin }}
+  <div class="grid">
+    <div class="grid-wide">
+      <section-title
+        title="리뷰"
+        :count="allCount"
+      />
+      <review-panel-list />
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import SectionTitle from '~/components/molecules/SectionTitle'
+import ReviewPanelList from '~/components/organisms/ReviewPanelList'
+import { mapState, mapActions } from 'vuex'
 export default {
-  async fetch({store}){
-    await store.dispatch('login')
+  components: {
+    SectionTitle,
+    ReviewPanelList
+  },
+  fetch({store}) {
+    return store.dispatch('reviews/getAcademyStatistics', 1)
+  },
+  computed: {
+    ...mapState({
+      allCount: state => state.reviews.allCount
+    })
   },
   methods: {
     ...mapActions({
@@ -21,5 +36,4 @@ export default {
 </script>
 
 <style lang="scss">
-  .container {margin: 10px;}
 </style>
