@@ -10,6 +10,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .container {
+    min-height: 100vh;
+    padding: 0 8px;
+    background: #E5E5E5;
+  }
 </style>
