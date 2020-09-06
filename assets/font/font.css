@@ -1,7 +1,3 @@
-@font-face{font-family:"NanumSqure";src:url(./NanumSquareL.woff2) format("woff2"),url(./NanumSquareL.woff) format("woff"),url(./NanumSquareL.eot) format("embedded-opentype");font-weight:300}
-@font-face{font-family:"NanumSqure";src:url(./NanumSquareR.woff2) format("woff2"),url(./NanumSquareR.woff) format("woff"),url(./NanumSquareR.ttf) format("truetype");font-weight:400}
-@font-face{font-family:"NanumSqure";src:url(./NanumSquareB.woff2) format("woff2"),url(./NanumSquareB.woff) format("woff"),url(./NanumSquareB.ttf) format("truetype");font-weight:600}
-@font-face{font-family:"NanumSqure";src:url(./NanumSquareEB.woff2) format("woff2"),url(./NanumSquareEB.woff) format("woff"),url(./NanumSquareEB.ttf) format("truetype");font-weight:800}
 @font-face{font-family:"NanumSqureRound";src:url(./NanumSquareRoundL.woff2) format("woff2"),url(./NanumSquareRoundL.woff) format("woff"),url(./NanumSquareRoundL.eot) format("embedded-opentype");font-weight:300}
 @font-face{font-family:"NanumSqureRound";src:url(./NanumSquareRoundR.woff2) format("woff2"),url(./NanumSquareRoundR.woff) format("woff"),url(./NanumSquareRoundR.ttf) format("truetype");font-weight:400}
 @font-face{font-family:"NanumSqureRound";src:url(./NanumSquareRoundB.woff2) format("woff2"),url(./NanumSquareRoundB.woff) format("woff"),url(./NanumSquareRoundB.ttf) format("truetype");font-weight:600}
