@@ -1,37 +1,39 @@
 <template>
   <div class="review-list">
-    <vue-slick-carousel v-bind="settings" @swipe="changeDot">
-      <div
-        v-for="(review, index) in academyReviewList"
-        :key="review.id"
-        class="review-list__item"
-      >
-        <div class="review-list__box" :class="{'review-list__box--blocked': !isLogin && index > 0}">
-          <review-list-rec-date
-            :recommended="review.recommended"
-            :createdAt="review.created_at.split('T')[0]"
-          />
-          <review-list-content :content="review" />
-          <writer-info
-            :tags="[review.start_grade, review.course_term]"
-            :writer="review.writer"
-            :recommended="review.recommended"
-            :createdAt="review.created_at.split('T')[0]"
-          />
+    <client-only>
+      <vue-slick-carousel v-bind="settings" @swipe="changeDot">
+        <div
+          v-for="(review, index) in academyReviewList"
+          :key="review.id"
+          class="review-list__item"
+        >
+          <div class="review-list__box" :class="{'review-list__box--blocked': !isLogin && index > 0}">
+            <review-list-rec-date
+              :recommended="review.recommended"
+              :createdAt="review.created_at.split('T')[0]"
+            />
+            <review-list-content :content="review" />
+            <writer-info
+              :tags="[review.start_grade, review.course_term]"
+              :writer="review.writer"
+              :recommended="review.recommended"
+              :createdAt="review.created_at.split('T')[0]"
+            />
+          </div>
+          <div v-if="!isLogin && index > 0" class="review-list__blocked-box">
+            <p class="blocked-box__text">리뷰를 한개만써도! <br />강남엄마의 다른 모든 리뷰들을 확인하실 수 있습니다</p>
+            <button-review-write :btnType="'inBox'" />
+          </div>
         </div>
-        <div v-if="!isLogin && index > 0" class="review-list__blocked-box">
-          <p class="blocked-box__text">리뷰를 한개만써도! <br />강남엄마의 다른 모든 리뷰들을 확인하실 수 있습니다</p>
-          <button-review-write :btnType="'inBox'" />
-        </div>
-      </div>
-    </vue-slick-carousel>
-    <vue-slick-carousel ref="reviewDotsSlick" v-bind="settingsDots" class="review-list__slider-dots">
-      <span v-for="(review, index) in academyReviewList" :key="index" class="slider-dot">
-        <span class="slider-dot__inner">
-          <span class="blind">{{ index }}</span>
+      </vue-slick-carousel>
+      <vue-slick-carousel ref="reviewDotsSlick" v-bind="settingsDots" class="review-list__slider-dots">
+        <span v-for="(review, index) in academyReviewList" :key="index" class="slider-dot">
+          <span class="slider-dot__inner">
+            <span class="blind">{{ index }}</span>
+          </span>
         </span>
-      </span>
-    </vue-slick-carousel>
+      </vue-slick-carousel>
+    </client-only>  
   </div>
 </template>
 
