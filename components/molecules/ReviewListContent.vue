@@ -34,6 +34,7 @@ export default {
 .review-list {
   &__content {
     padding-top: 10px;
+    word-break: keep-all;
     @include breakpoint('pc') {
       padding-top: 0;
     }
