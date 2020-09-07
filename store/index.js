@@ -1,5 +1,5 @@
 export const state = () => ({
-  isLogin: null
+  isLogin: false
 })
 
 export const mutations = {
@@ -10,7 +10,6 @@ export const mutations = {
 
 export const actions = {
   async login({commit}) {
-    const data = await this.$axios.$get('/academies/1/reviews/')
-    commit('setLogin', data)
+    commit('setLogin', true)
   }
 }

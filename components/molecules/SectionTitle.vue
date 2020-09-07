@@ -1,16 +1,16 @@
 <template>
-  <div class="section-title">
+  <div class="section__title">
     <title-text :title="title" />
     <title-count :count="count" />
   </div>
 </template>
 <script>
-import TitleText from '~/components/atoms/TitleText'
 import TitleCount from '~/components/atoms/TitleCount'
+import TitleText from '~/components/atoms/TitleText'
 export default {
   components: {
-    TitleText,
-    TitleCount
+    TitleCount,
+    TitleText
   },
   props: {
     title: {
@@ -26,11 +26,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section-title {
+.section__title {
   display: flex;
   align-items: center;
   padding-top: 40px;
-  font-family: 'NanumSqureRound';
 }
 .title-count {
   margin-left: 6px;

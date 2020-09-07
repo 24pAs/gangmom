@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nuxt",
-    "lint": "eslint **/*"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "browserslist": [
     "last 2 version",
@@ -25,7 +25,8 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
     "nuxt": "^2.14.4",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

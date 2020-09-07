@@ -1,5 +1,5 @@
 <template>
-  <strong class="review-panel-label">{{ label }}</strong>
+  <strong class="review-statistics__label">{{ label }}</strong>
 </template>
 
 <script>
@@ -14,11 +14,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .review-panel-label {
+  .review-statistics__label {
     display: block;
     font-size: 12px;
-    font-weight: 800;
     font-family: inherit;
+    text-align: center;
     @include breakpoint('pc') {
       font-size: 16px;
     }

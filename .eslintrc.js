@@ -5,7 +5,8 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    ecmaVersion: 2020
+    ecmaVersion: 2019,
+    sourceType: 'module'
   },
   extends: [
     'plugin:vue/recommended'
@@ -13,5 +14,12 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'vue/mustache-interpolation-spacing': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/html-self-closing': 'off',
+    'camelcase': 'off',
+    'vue/attribute-hyphenation': ['error', "never", { "ignore": ["custom-prop"] }]
+  }
 }

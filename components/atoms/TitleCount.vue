@@ -18,7 +18,6 @@ export default {
 <style lang="scss" scoped>
   .title-count {
     font-size: 16px;
-    font-weight: 800;
     color: #A0A5AE;
     font-family: inherit;
   }

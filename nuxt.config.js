@@ -16,14 +16,17 @@ module.exports = {
     baseURL: 'https://demo7094602.mockable.io/'
   },
   css: [
-    '~/assets/font/font.css'
+    '~/assets/font/font.css',
+    'vue-slick-carousel/dist/vue-slick-carousel.css'
   ],
   styleResources: {
     scss: [
         '~/assets/scss/style.scss'
     ]
   },
+  plugins: [{ src: '~/plugins/vueSlickCarousel.js' }],
   build: {
+    transpile: ['vue-slick-carousel'],
     postcss: {
       preset: {
         autoprefixer: {

@@ -4,6 +4,7 @@
 $breakpoints: (
   'pc': 832px
 );
+$colorDarkGray: #444951;
 
 // mixin
 @mixin breakpoint($breakpoint) {
@@ -25,9 +26,9 @@ html{
 body{
   margin: 0;
   padding: 0;
-  font-family:"NanumSqure";
+  font-family:"NanumSqureRound";
   font-size: 12px;
-  font-weight:400;
+  font-weight: 800;
   text-size-adjust: 100%;
   line-height: 1.5;
   @include breakpoint('pc') {
@@ -47,6 +48,7 @@ button{
   padding: 0;
   border: none;
   background-color: rgba(0,0,0,0);
+  box-shadow: none;
   font: inherit;
   appearance: none;
 }
@@ -57,10 +59,19 @@ input, select{
 }
 ol,ul{
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 img{
   max-width: 100%;
+}
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
 }
 
 // grid
@@ -79,5 +90,74 @@ img{
     @include breakpoint('pc') {
       grid-column: 2/span 12;
     }
+  }
+}
+
+// ico
+.ico {
+  display: inline-block;
+  background: no-repeat 50%/100%;
+  &-star__avg {
+    width: 32px;
+    height: 32px;
+    background-image: url(~assets/images/ico_star_avg.png);
+    @include breakpoint('pc') {
+      width: 42px;
+      height: 42px;
+    }
+  }
+  &-star__rating {
+    width: 18px;
+    height: 18px;
+    background-image: url(~assets/images/ico_star_rating.png);
+    @include breakpoint('pc') {
+      width: 17px;
+      height: 17px;
+    }
+    &--on {
+      background-image: url(~assets/images/ico_star_rating_on.png);
+    }
+  }
+  &-pros {
+    width: 18px;
+    height: 18px;
+    background-image: url(~assets/images/ico_pros.svg);
+  }
+  &-cons {
+    width: 18px;
+    height: 18px;
+    background-image: url(~assets/images/ico_cons.svg);
+  }
+  &-reivew-write {
+    width: 12px;
+    height: 12px;
+    background-image: url(~assets/images/ico_review_write.png);
+    @include breakpoint('pc') {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &-writer {
+    width: 22px;
+    height: 22px;
+    background-image: url(~assets/images/ico_writer.png);
+    @include breakpoint('pc') {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-align: center;
+  @include breakpoint(('pc')) {
+    height: 70px;
+    font-size: 16px;
   }
 }
